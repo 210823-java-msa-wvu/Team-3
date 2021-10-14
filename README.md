@@ -6,7 +6,6 @@ User Story
 - Users can type in a universal chat.
 - The DM can do everything the Users can do.
 - DM can change the map.
-- DM can interact with monsters on the board.
 - DM can change user's stats (for example, increase or decrease their health)
 
 Stretch Goal
@@ -18,3 +17,4 @@ Stretch Goal
 - DM can upload a map
 - Users can place their pieces on the board.
 - Users can move their playable piece.
+- DM can interact with monsters on the board.
