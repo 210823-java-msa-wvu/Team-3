@@ -1,20 +1,27 @@
-# Team-3
+# AngularDnd
 
-User Story
-- Four Users can log in at the same time and participate.
-- Users can roll a dice.
-- Users can type in a universal chat.
-- The DM can do everything the Users can do.
-- DM can change the map.
-- DM can change user's stats (for example, increase or decrease their health)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
-Stretch Goal
-- DM can boot user from session.
-- DM can start a timer.
-- Users can upload their own image for their own playable piece.
-- DM can change the map.
-- DM can interact with monsters on the board.
-- DM can upload a map
-- Users can place their pieces on the board.
-- Users can move their playable piece.
-- DM can interact with monsters on the board.
+## Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
