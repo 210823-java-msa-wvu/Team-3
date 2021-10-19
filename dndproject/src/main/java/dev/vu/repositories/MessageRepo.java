@@ -1,22 +1,21 @@
 package dev.vu.repositories;
 
 import dev.vu.beans.Card;
-import dev.vu.beans.Character;
+import dev.vu.beans.Message;
 
 import java.util.List;
 
-public interface CharacterRepo extends CrudRepository<Character> {
-
+public interface MessageRepo extends CrudRepository<Message>{
     // Read
-    Character getById(Integer id);
+    Message getById(Integer id);
     //Card getByFirstName(String firstName);
-    List<Character> getAll();
+    List<Message> getAll();
 
     // Create
-    Character add(Character a);
+    Message add(Message a);
 
     // Update - this will eventually become a PUT Http Request
-    void update(Character a);
+    void update(Message a);
 
     // Delete
     void delete(Integer id);

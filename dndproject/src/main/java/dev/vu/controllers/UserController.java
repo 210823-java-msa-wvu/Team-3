@@ -31,4 +31,27 @@ public class UserController {
         return usersHibernate.getByUsername(username);
     }
 
+    @GetMapping(path="/{id}") // this is the syntax to use PathVariables -> :8080/SpringMVCDemo/users/10
+    public User getById(@PathVariable("id") int id) {
+        return usersHibernate.getById(id);
+    }
+
+    //    @RequestMapping(method=RequestMethod.PUT, path="/users")
+    @PostMapping(consumes = "application/json", produces = "application/json")
+    public User addUser(@RequestBody User user) { // @RequestBody -> instead of om.readValue(request.getReader(), User.class)
+        return usersHibernate.add(user);
+    }
+
+    @PutMapping(path="/{id}") // http://localhost:8080/SpringMVCDemo/users/1
+    public void updateUser(@PathVariable("id") int id, @RequestBody User user) {
+        if (id == user.getId()) {
+            usersHibernate.update(user);
+        }
+    }
+
+    @DeleteMapping(path="/{id}")
+    public void deleteUser(@PathVariable("id") int id) {
+        usersHibernate.delete(id);
+    }
+
 }
