@@ -6,22 +6,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     @Id
     private Integer id;
     private String username;
     private String password;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String username, String password) {
+    public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public Users(Integer id, String username, String password) {
+    public User(Integer id, String username, String password) {
         this.id = id;
         this.username = username;
         this.password = password;

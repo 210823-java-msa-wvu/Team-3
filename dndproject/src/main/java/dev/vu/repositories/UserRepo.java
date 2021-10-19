@@ -1,20 +1,20 @@
 package dev.vu.repositories;
 
-import dev.vu.beans.Users;
+import dev.vu.beans.User;
 
 import java.util.List;
 
-public interface UserRepo<U> extends CrudRepository<Users> {
+public interface UserRepo<U> extends CrudRepository<User> {
 
-    Users add(Users users);
+    User add(User user);
 
-    Users getById(Integer id);
+    User getById(Integer id);
 
-    Users getByUsername(String username);
+    User getByUsername(String username);
 
-    List<Users> getAll();
+    List<User> getAll();
 
-    void update(Users users);
+    void update(User user);
 
     void delete(Integer id);
 }

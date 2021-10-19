@@ -1,6 +1,6 @@
 package dev.vu.repositories;
 
-import dev.vu.beans.Users;
+import dev.vu.beans.User;
 import dev.vu.utils.HibernateUtil;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -15,7 +15,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class UsersHibernate implements UserRepo<Users> {
+public class UsersHibernate implements UserRepo<User> {
     private HibernateUtil hu;
 
     @Autowired
@@ -24,14 +24,14 @@ public class UsersHibernate implements UserRepo<Users> {
     }
 
     @Override
-    public Users add(Users users) {
+    public User add(User user) {
 
         Session s = HibernateUtil.getSession();
         Transaction tx = null;
 
         try {
             tx = s.beginTransaction();
-            s.save(users);
+            s.save(user);
             tx.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,27 +39,27 @@ public class UsersHibernate implements UserRepo<Users> {
         } finally {
             s.close();
         }
-        return users;
+        return user;
 
     }
 
     @Override
-    public Users getById(Integer id) {
+    public User getById(Integer id) {
         return null;
     }
 
     @Override
-    public Users getByUsername(String username) {
+    public User getByUsername(String username) {
 
        Session s = HibernateUtil.getSession();
-       Users u = null;
+       User u = null;
 
        try {
 
            CriteriaBuilder criteriaBuilder = s.getCriteriaBuilder();
-           CriteriaQuery<Users> criteriaQuery = criteriaBuilder.createQuery(Users.class);
+           CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
 
-           Root<Users> root = criteriaQuery.from(Users.class);
+           Root<User> root = criteriaQuery.from(User.class);
            Predicate predicate = criteriaBuilder.equal(root.get("username"), username);
 
            criteriaQuery.select(root).where(predicate);
@@ -76,12 +76,12 @@ public class UsersHibernate implements UserRepo<Users> {
     }
 
     @Override
-    public List<Users> getAll() {
+    public List<User> getAll() {
         return null;
     }
 
     @Override
-    public void update(Users users) {
+    public void update(User user) {
 
     }
 

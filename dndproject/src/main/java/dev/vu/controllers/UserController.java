@@ -1,6 +1,6 @@
 package dev.vu.controllers;
 
-import dev.vu.beans.Users;
+import dev.vu.beans.User;
 
 import dev.vu.repositories.UsersHibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +21,12 @@ public class UserController {
 
 //    @RequestMapping(value = "/users", method = RequestMethod.GET)
     @GetMapping
-    public List<Users> getAllUsers() {
+    public List<User> getAllUsers() {
         return usersHibernate.getAll();
     }
 
     @GetMapping(path = "/{username}")
-    public Users getByUsername(@PathVariable("username") String username){
+    public User getByUsername(@PathVariable("username") String username){
         System.out.println(username);
         return usersHibernate.getByUsername(username);
     }
