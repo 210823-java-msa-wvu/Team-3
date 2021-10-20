@@ -10,17 +10,20 @@ public class Card {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
-    private String cardInfo;
+    private String cardname;
+    private String description;
 
     public Card() {}
 
-    public Card(String cardInfo) {
-        this.cardInfo = cardInfo;
+    public Card(String cardname, String description) {
+        this.cardname = cardname;
+        this.description = description;
     }
 
-    public Card(Integer id, String cardInfo) {
+    public Card(Integer id, String cardname, String description) {
         this.id = id;
-        this.cardInfo = cardInfo;
+        this.cardname = cardname;
+        this.description = description;
     }
 
     public Integer getId() {
@@ -31,19 +34,28 @@ public class Card {
         this.id = id;
     }
 
-    public String getCardInfo() {
-        return cardInfo;
+    public String getCardname() {
+        return cardname;
     }
 
-    public void setCardInfo(String cardInfo) {
-        this.cardInfo = cardInfo;
+    public void setCardname(String cardname) {
+        this.cardname = cardname;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
     public String toString() {
         return "Card{" +
                 "id=" + id +
-                ", cardInfo='" + cardInfo + '\'' +
+                ", cardname='" + cardname + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

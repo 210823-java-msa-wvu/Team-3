@@ -9,24 +9,24 @@ public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String characterName;
+    private String charactername;
     private Integer health;
+    private Integer ac;
 
 
     public Character(){}
 
-    public Character(Integer id, String characterName, Integer health) {
+    public Character(String charactername, Integer health, Integer ac) {
+        this.charactername = charactername;
+        this.health = health;
+        this.ac = ac;
+    }
+
+    public Character(Integer id, String charactername, Integer health, Integer ac) {
         this.id = id;
-        this.characterName = characterName;
+        this.charactername = charactername;
         this.health = health;
-    }
-
-    public Integer getHealth() {
-        return health;
-    }
-
-    public void setHealth(Integer health) {
-        this.health = health;
+        this.ac = ac;
     }
 
     public Integer getId() {
@@ -37,20 +37,37 @@ public class Character {
         this.id = id;
     }
 
-    public String getCharacterName() {
-        return characterName;
+    public String getCharactername() {
+        return charactername;
     }
 
-    public void setCharacterName(String characterName) {
-        this.characterName = characterName;
+    public void setCharactername(String charactername) {
+        this.charactername = charactername;
+    }
+
+    public Integer getHealth() {
+        return health;
+    }
+
+    public void setHealth(Integer health) {
+        this.health = health;
+    }
+
+    public Integer getAc() {
+        return ac;
+    }
+
+    public void setAc(Integer ac) {
+        this.ac = ac;
     }
 
     @Override
     public String toString() {
         return "Character{" +
                 "id=" + id +
-                ", characterName='" + characterName + '\'' +
+                ", charactername='" + charactername + '\'' +
                 ", health=" + health +
+                ", ac=" + ac +
                 '}';
     }
 }
