@@ -1,7 +1,11 @@
 package dev.knapp.beans;
 
+//import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
+
+//@JsonIgnoreProperties({"hibernateLazyInitializer"})
 @Entity
 @Table(name="characters")
 public class Character {
@@ -11,7 +15,7 @@ public class Character {
     private Integer id;
     private String charactername;
     private Integer health;
-    private Integer ac;
+    private Integer ac;//chance of getting hit
 
 
     public Character(){}
