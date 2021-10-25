@@ -1,7 +1,7 @@
 package dev.knapp.security;
 
-import com.revature.p2.beans.User;
-import com.revature.p2.services.CustomUserDetailsService;
+import dev.knapp.beans.User;
+import dev.knapp.services.CustomUserDetailsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Collections;
 
-import static com.revature.p2.security.SecurityConstants.HEADER_STRING;
-import static com.revature.p2.security.SecurityConstants.TOKEN_PREFIX;
+import static dev.knapp.security.SecurityConstants.HEADER_STRING;
+import static dev.knapp.security.SecurityConstants.TOKEN_PREFIX;
 
 @Slf4j
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
@@ -35,7 +35,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             if (StringUtils.hasText(jwt) && jwtTokenProvider.validateToken(jwt)){
 
-                Long userId = jwtTokenProvider.getUserIdFromJWT(jwt);
+                Integer userId = jwtTokenProvider.getUserIdFromJWT(jwt);
                 User userDetails = customUserDetailsService.loadUserById(userId);
 
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, Collections.emptyList());
